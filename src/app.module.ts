@@ -4,9 +4,10 @@ import { AppService } from './app.service'
 import { UsersModule } from './users/users.module'
 import { LoggerMiddleware } from './logger/logger.middleware'
 import { PrismaModule } from 'nestjs-prisma'
+import { AuthModule } from './auth/auth.module'
 
 @Module({
-	imports: [UsersModule, PrismaModule.forRoot()],
+	imports: [AuthModule, UsersModule, PrismaModule.forRoot()],
 	controllers: [AppController],
 	providers: [AppService]
 })
