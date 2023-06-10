@@ -7,7 +7,7 @@ import { PrismaModule } from 'nestjs-prisma'
 import { AuthModule } from './auth/auth.module'
 
 @Module({
-	imports: [AuthModule, UsersModule, PrismaModule.forRoot()],
+	imports: [PrismaModule.forRoot(), AuthModule, UsersModule],
 	controllers: [AppController],
 	providers: [AppService]
 })

@@ -14,7 +14,7 @@ export class User {
 	@ApiProperty({ default: 'test' })
 	@IsString()
 	@IsNotEmpty()
-	name: string
+	username: string
 	@ApiProperty({ default: 'testing1' })
 	@IsString()
 	@IsNotEmpty()

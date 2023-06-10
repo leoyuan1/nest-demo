@@ -12,7 +12,7 @@ export class UsersService {
 
 	async create(createUserDto: CreateUserDto) {
 		let currentUser = await this.prisma.users.findUnique({
-			where: { phone: createUserDto.phone }
+			where: { username: createUserDto.username }
 		})
 		if (currentUser) {
 			throw new NotFoundException('User already exists')
@@ -31,9 +31,9 @@ export class UsersService {
 		return this.prisma.users.findMany()
 	}
 
-	findOne(phone: string) {
+	findOne(username: string) {
 		let user = this.prisma.users.findUnique({
-			where: { phone: phone }
+			where: { username: username }
 		})
 		return user
 	}
